@@ -35,7 +35,9 @@ def create_optimizer(loss, init_lr, num_train_steps, num_warmup_steps, use_tpu):
       num_train_steps,
       end_learning_rate=0.0,
       power=1.0,
-      cycle=False)
+      cycle=False,
+      name='lr'
+      )
 
   # Implements linear warmup. I.e., if global_step < num_warmup_steps, the
   # learning rate will be `global_step/num_warmup_steps * init_lr`.
